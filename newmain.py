@@ -113,7 +113,7 @@ def main():
                 appender = APPEND(master_file_name, reader.records_master)
                 if appender.result(last_line):
                     for file in files_name_updated:
-                        if files_name_updated != "master":
+                        if files_name_updated != master_file_name:
                             print(f"Records from '{file}' appended to master file successfully.")
                     # Updating meta time in the file meta.txt
                     with open("meta.txt", 'w') as file:
