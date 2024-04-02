@@ -1,0 +1,53 @@
+Initial setup :
+- add all the files to merge in master to the specific folder example: "Icecream_Factory" also add master file in the same folder
+- don't forget to add meta.txt initially in meta_txt you can give any old date before any kind of files are added to the drive
+
+There is three python file named "newmain.py" "read.py" "append.py" and "key.json" also two .txt file which are meta.txt and manual.txt
+
+change to make in order to operate in your device are also included here for newmain.py
+
+line 11 - change the master_file_name to your own master name
+line 12 - change drive_folder_name to your own folder in drive where you will add the master sheet and other sheet to include in to master in order to merge to master
+line 13 - change the path of credentials_file to your own path of api key for service account
+
+change to make in read.py
+
+line 13- change the path of credentials_file to your own path of api key for service account
+
+change to make in append.py
+
+line 17- change the path of credentials_file to your own path of api key for service account
+
+Sorry that I have done hardcode for the path of credentials_file 
+
+
+Responsibility of newmain.py 
+- to find the name and file unique id to get the data from the spreadsheet
+- to get the last metadate where the change was made to master (I strictly recommend user of the program to not directly modify master in drive manually it can have impact to the program ability)
+- to execute READ and APPEND class imported from read and append
+- update the meta.txt if all data from the other file are merged sucessfully to the master in drive 
+- error handling are also done accordingly to check if the folder is modified latestly
+
+Responsibility of Read.py
+
+function master:
+-get the data from master in order to append in master_list it is further used to check data redundancy while appending in append.p
+
+function new:
+- get the data of the new files to further proceed to the append.py 
+- it only add the data to records_master if it is not available in master_list
+
+
+Responsibility of Append.py
+
+function append_to_master:
+- it append the data which are available in the records_master which have been proceeded from the read.py
+
+function result:
+- it checks if the data are sucessfully added in the master
+
+Responsibility of meta.txt:
+
+- it is responsible to record the last date of sucessful merge to master
+- the date here is used in newmain to check if the data are merged lastly and consider this date is reference for the other file which to proceed for read and which to avoid  
+
