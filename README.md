@@ -1,4 +1,4 @@
-# Ice-Cream Factory Data Integration Project
+# Ice-Cream Factory Data Integration Project(Read Manual.txt in master branch)
 
 This project is designed to automate the process of extracting data from Google Sheets or CSV files and appending it to a dashboard built on Google Looker Studio. The integration is performed using a Google service account, operating within the owner's Google Drive folder.
 
